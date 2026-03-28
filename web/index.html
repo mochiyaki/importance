@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-powered customs clearance documentation assistant for import clearance. Get HS codes, required forms, and regulatory guidance.">
+  <title>Importance · Customs Clearance Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">📦</span>
+        <span class="logo-text">Importance</span>
+      </div>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">✕</button>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">📋 Product Details</h3>
+      <p class="sidebar-desc">Fill in product info to get tailored documentation guidance.</p>
+
+      <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" placeholder="e.g. Olive Oil, Electronics, Textiles…">
+      </div>
+
+      <div class="form-group">
+        <label for="productDesc">Description</label>
+        <textarea id="productDesc" rows="3" placeholder="Brief description of the product, materials, intended use…"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="originCountry">Country of Origin</label>
+        <input type="text" id="originCountry" placeholder="e.g. Tunisia, China, Germany…">
+      </div>
+
+      <div class="form-group">
+        <label for="destCountry">Destination Country</label>
+        <input type="text" id="destCountry" value="United States" placeholder="e.g. United States">
+      </div>
+
+      <button class="btn-primary" id="generateBtn">
+        <span>🚀</span> Generate Documentation Guide
+      </button>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot connected"></span>
+        <span class="status-text">AI Connected</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <button class="btn-secondary" id="clearBtn">
+        <span>🗑️</span> Clear Conversation
+      </button>
+    </div>
+  </aside>
+
+  <!-- Mobile sidebar toggle -->
+  <button class="mobile-sidebar-btn" id="mobileSidebarBtn" aria-label="Open sidebar">☰</button>
+
+  <!-- Main content -->
+  <main class="main-content" id="mainContent">
+    <!-- Header -->
+    <div class="main-header">
+      <h1>📦 Importance · Customs Clearance Docs</h1>
+      <p>AI-powered customs documentation assistant for import clearance</p>
+    </div>
+
+    <!-- Info cards -->
+    <div class="cards-row">
+      <div class="info-card">
+        <h3>📄 Forms & Filings</h3>
+        <p>CBP 7501, CBP 3461, ISF 10+2, ACE submissions, and more — tailored to your product.</p>
+      </div>
+      <div class="info-card">
+        <h3>🔍 HS Code Lookup</h3>
+        <p>Get accurate Harmonized System tariff code suggestions with duty rate estimates.</p>
+      </div>
+      <div class="info-card">
+        <h3>⚖️ Compliance Check</h3>
+        <p>FDA, USDA, EPA, CPSC — know which agencies regulate your product.</p>
+      </div>
+    </div>
+
+    <!-- Chat area -->
+    <div class="chat-area" id="chatArea">
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <h2>💡 Try asking about…</h2>
+        <div class="sample-prompts">
+          <button class="sample-btn" data-prompt="I need to import olive oil from Tunisia to the US">I need to import olive oil from Tunisia to the US</button>
+          <button class="sample-btn" data-prompt="Help me with customs docs for electronics components from China">Help me with customs docs for electronics components from China</button>
+          <button class="sample-btn" data-prompt="What do I need to clear a shipment of cotton textiles from India?">What do I need to clear a shipment of cotton textiles from India?</button>
+          <button class="sample-btn" data-prompt="Import documentation for automotive parts from Germany">Import documentation for automotive parts from Germany</button>
+          <button class="sample-btn" data-prompt="Clearance requirements for pharmaceutical ingredients from India">Clearance requirements for pharmaceutical ingredients from India</button>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <div class="input-wrapper">
+        <input type="text" id="chatInput" placeholder="Ask about customs clearance documentation…" autocomplete="off">
+        <button class="send-btn" id="sendBtn" aria-label="Send message">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@insforge/sdk@latest/dist/insforge.umd.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
