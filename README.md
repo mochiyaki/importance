@@ -33,7 +33,7 @@ Importance is a custom clearance automation system that helps small B2B import b
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        Import Clearance System                       │
+│                        Import Clearance System                      │
 └─────────────────────────────────────────────────────────────────────┘
                                     │
         ┌───────────────────────────┼───────────────────────────┐
